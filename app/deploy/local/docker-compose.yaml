@@ -1,0 +1,21 @@
+services:
+  wise-gateway-db:
+    image: postgres:17
+    container_name: wise_gateway_db
+    ports:
+      - "5456:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: wise_gateway_db
+    volumes:
+      - wise_gateway_postgres:/var/lib/postgresql/data
+    networks:
+      - wise_gateway_network
+
+volumes:
+  wise_gateway_postgres:
+    driver: local
+
+networks:
+    wise_gateway_network:
