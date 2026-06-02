@@ -16,6 +16,7 @@ import java.util.Optional;
  */
 @Service
 @RequiredArgsConstructor
+//TODO тут можно будет делить на команд и квери сервисы
 public class ProjectService {
 
     private final ProjectRepository repository;

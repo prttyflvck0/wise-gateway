@@ -7,6 +7,7 @@ import lombok.Setter;
 import ru.wise.gateway.domain.ReleaseStatus;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Сущность проекта
@@ -40,4 +41,7 @@ public class ProjectEntity {
 
     @Column(name = "p_updated_at", nullable = false)
     private LocalDateTime updatedAt;
+    
+    @OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DatasetEntity> datasets;
 }
