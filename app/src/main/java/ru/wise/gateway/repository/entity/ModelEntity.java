@@ -11,6 +11,7 @@ import ru.wise.gateway.domain.ReleaseStatus;
 import ru.wise.gateway.domain.TaskType;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Сущность модели
@@ -84,5 +85,8 @@ public class ModelEntity {
 
     @Column(name = "m_updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "model", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ExperimentEntity> experiments;
 }
 
