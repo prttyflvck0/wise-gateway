@@ -81,4 +81,7 @@ public class DatasetEntity {
     @OneToMany(mappedBy = "parentDataset", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<DatasetEntity> childDatasets;
 
+    @OneToMany(mappedBy = "dataset", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DatasetSampleEntity> samples;
+
 }
