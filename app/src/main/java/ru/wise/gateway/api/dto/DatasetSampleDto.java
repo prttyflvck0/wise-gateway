@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @Schema(description = "Образец датасета")
+//todo чето странное зачем такое надо
 public class DatasetSampleDto {
     
     @JsonProperty("id")
